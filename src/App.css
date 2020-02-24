@@ -1,9 +1,37 @@
 .product-list img {
   height: 150px;
   width: 150px;
+  margin: 0;
+  padding: 0;
+  border-right: 1px solid #eee;
+}
+
+.product-list {
   display: block;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
   flex-flow: row wrap;
+  background-color: #fff;
+  border-left: 1px solid #eee;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
 }
+
+.product-list h4 {
+  font-size: 13px;
+  color: #333;
+  margin: 0 10px;
+  list-style: none;
+}
+
+.product-list h5 {
+  font-size: 14px;
+  color: #e10c00;
+  line-height: 15px;
+  font-weight: bold;
+  margin: 10px 10px;
+}
+
+
+  
