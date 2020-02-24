@@ -1,11 +1,12 @@
 import React from 'react';
 import {Link} from 'react-router-dom'
 import products from '../data/products.json';
+import styles from '../App.css';
 
 class ListPage extends React.Component {
   render() {
     return(
-     <div>
+     <div className="product-list">
          {this.props.products.map((item,index)=> 
              <Link to={`/detail?id=${item.id}&name=${item.name}&index=${index}`}>
                 <div>
