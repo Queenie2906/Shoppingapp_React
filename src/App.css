@@ -1,9 +1,16 @@
-.product-list img {
-  height: 150px;
+.product-list a img {
   width: 150px;
+  height: 150px;
+  margin: auto;
+  display: block;
+}
+
+.product-list a {
   margin: 0;
-  padding: 0;
   border-right: 1px solid #eee;
+  width: 20%;
+  padding: 10px;
+  text-decoration: none;
 }
 
 .product-list {
