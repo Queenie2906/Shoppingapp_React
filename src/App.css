@@ -7,10 +7,11 @@
 
 .product-list a {
   margin: 0;
-  border-right: 1px solid #eee;
-  width: 20%;
-  padding: 10px;
-  text-decoration: none;
+    border-right: 1px solid #eee;
+    width: calc(20% - 1px); 
+    padding: 0px;
+    text-decoration: none;
+    /* display: block; */
 }
 
 .product-list {

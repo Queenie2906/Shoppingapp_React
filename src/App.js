@@ -4,6 +4,7 @@ import ListPage from './pages/ListPage';
 import TopMenu from './components/TopMenu';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import DetailPage from './pages/DetailPage';
+import  './App.css';
 
 class App extends React.Component {
   render() {

@@ -1,27 +1,34 @@
 import React from 'react';
 import {Link} from 'react-router-dom'
-import products from '../data/products.json';
-import styles from '../App.css';
-
+import ProductCard from '../components/ProductCard.js';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import {filter} from '../action'
 class ListPage extends React.Component {
   render() {
     return(
-     <div className="product-list">
-         {this.props.products.map((item,index)=> 
-             <Link to={`/detail?id=${item.id}&name=${item.name}&index=${index}`}>
-                <div>
-                    <img src={item.image}/>
-                    <h4>{item.name}</h4>
-                    <h5>{item.price}</h5>
-                </div>
-            </Link>
-            )}
-     </div>
-    )
+      <div>
+        <button type="button" onClick={()=>this.props.filter('apple')}>Apple</button>
+        <button type="button" onClick={()=>this.props.filter('samsung')}>Samsung</button>
+        <p>Selected Category: {this.props.category}</p>
+        {this.props.products.map((item,index)=> (
+          <ProductCard product={item} index={index} />     
+        ))}
+      </div>
+    );
   }
 }
 
 ListPage.defaultProps = {
-    products: products
+    products: []
 }
-export default ListPage ;
+
+const mapStateToProps = state => ({
+  products: state.products,
+  category: state.category
+})
+const mapDispatchToProps = dispatch => ({
+  ...bindActionCreators ({filter}, dispatch)
+
+})
+export default connect(mapStateToProps,mapDispatchToProps)(ListPage)

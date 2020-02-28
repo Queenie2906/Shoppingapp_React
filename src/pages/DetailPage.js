@@ -1,6 +1,7 @@
 import React from 'react';
 import products from '../data/products.json';
 import queryString from 'query-string'
+import { connect } from 'react-redux';
 
 
 class DetailPage extends React.Component {
@@ -23,4 +24,15 @@ class DetailPage extends React.Component {
   }
 }
 
-export default DetailPage ;
+DetailPage.defaultProps = {
+  products: []
+}
+
+const mapStateToProps = state => ({
+products: state.products
+})
+const mapDispatchToProps = dispatch => ({
+
+})
+export default connect(mapStateToProps,mapDispatchToProps)(DetailPage)
+
